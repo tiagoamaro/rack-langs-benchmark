@@ -18,33 +18,13 @@ class MyApp
   end
 
   def body
-    content = if homepage?
-      "Your IP: #{request.ip}"
-    else
-      "Page Not Found"
-    end
-
-    layout(content)
+    'Hello world!'
   end
 
   private
 
   def homepage?
     request.path_info == '/'
-  end
-
-  def layout(content)
-%{<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-    <meta charset="utf-8">
-    <title>Your IP</title>
-  </head>
-  <body>
-    #{content}
-  </body>
-</html>}
   end
 end
 
